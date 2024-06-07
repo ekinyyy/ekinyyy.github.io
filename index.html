@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="pageTitle">📝</title>
+    <title id="pageTitle"></title>
     <style>
         body {
             margin: 0;
@@ -17,10 +17,15 @@
             background-color: #f0f0f0;
             text-align: center;
         }
+        footer {
+            position: fixed;
+            bottom: 20px;
+            text-align: center;
+            font-size: 0.5em;
+        }
         footer a {
             text-decoration: none;
             color: black;
-            font-size: 1em;
         }
     </style>
 </head>
@@ -35,15 +40,12 @@
                 document.getElementById('mainEmoji').innerText = emoji;
             } catch (error) {
                 console.error('Error fetching the emoji:', error);
-                const fallbackEmoji = '📝';
-                document.getElementById('pageTitle').innerText = fallbackEmoji;
-                document.getElementById('mainEmoji').innerText = fallbackEmoji;
             }
         }
 
         fetchRandomEmoji();
     </script>
-    <span id="mainEmoji">📝</span>
+    <span id="mainEmoji"></span>
     <footer><a href="mailto:me@peeing.cn">me@peeing.cn</a></footer>
 </body>
 </html>
