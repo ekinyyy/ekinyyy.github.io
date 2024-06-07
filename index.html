@@ -1,1 +1,61 @@
-hello world!
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .content {
+            text-align: center;
+        }
+        .contact {
+            position: absolute;
+            bottom: 20px;
+            text-align: center;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>Welcome to My World</h1>
+        <p></p>
+        <p id="emoji">📝</p>
+    </div>
+    <div class="contact">
+        <p>Contact me at: <a href="mailto:example@example.com">example@example.com</a></p>
+    </div>
+    <script>
+        function getRandomEmoji() {
+            const emojiRanges = [
+                [0x1F600, 0x1F64F], // Emoticons
+                [0x1F300, 0x1F5FF], // Miscellaneous Symbols and Pictographs
+                [0x1F680, 0x1F6FF], // Transport and Map Symbols
+                [0x1F700, 0x1F77F], // Alchemical Symbols
+                [0x1F780, 0x1F7FF], // Geometric Shapes Extended
+                [0x1F800, 0x1F8FF], // Supplemental Arrows-C
+                [0x1F900, 0x1F9FF], // Supplemental Symbols and Pictographs
+                [0x1FA00, 0x1FA6F], // Chess Symbols
+                [0x1FA70, 0x1FAFF]  // Symbols and Pictographs Extended-A
+            ];
+
+            const randomRange = emojiRanges[Math.floor(Math.random() * emojiRanges.length)];
+            const codePoint = Math.floor(Math.random() * (randomRange[1] - randomRange[0] + 1)) + randomRange[0];
+            return String.fromCodePoint(codePoint);
+        }
+
+        document.getElementById('emoji').innerText = getRandomEmoji();
+    </script>
+</body>
+</html>
